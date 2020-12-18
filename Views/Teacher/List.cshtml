@@ -1,0 +1,19 @@
+﻿@model IEnumerable<schoolProject.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<form actions="/Teacher/List" method="Get" >
+ <label type="text" for="search" name="search" />
+<input type="text" id="search" name="search"/>
+<input type="button" value="Search"/>
+</form>
+
+@foreach(var teacher in Model)
+{
+    
+    <div class="information"><a href="/Teacher/Show/@teacher.teacherid">@teacher.teacherfname,@teacher.teacherlname, (@teacher.salary) ,@teacher.hiredate,@teacher.employeenumber</a></div>
+}
+
